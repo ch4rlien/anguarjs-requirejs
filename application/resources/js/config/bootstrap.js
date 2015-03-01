@@ -1,8 +1,11 @@
+/**
+ * Kick-off for whole application. Here we load each config file and define domReady.
+ */
 define([
 	'require',
 	'angular',
-	'app/main',
-	'routes'
+	'../app/main',
+	'config/routes'
 ], function (require, ng) {
 	'use strict';
 
@@ -11,7 +14,7 @@ define([
 	 * using the `run` function on the top-level module
 	 */
 
-	require(['domReady!', 'uiBootstrap'], function (document) {
+	require(['domReady!'], function (document) {
 		ng.bootstrap(document, ['app']);
 	});
 });

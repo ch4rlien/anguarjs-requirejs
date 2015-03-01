@@ -2,14 +2,33 @@
 <html>
 <head>
     <title>AngularJS and RequreJS</title>
-    <script src="js/lib/require.js"></script>
+    <link rel="stylesheet" href="resources/css/bootstrap.css"/>
+    <link rel="stylesheet" href="resources/css/bootstrap-theme.css"/>
+    <style>
+        .navbar { border-radius:0; }
+    </style>
+    <script src="resources/js/lib/require.js"></script>
     <script>
-        require(['./js/common'], function (common) {
+        require(['./resources/js/common'], function (common) {
             require(['app/main']);
         });
     </script>
 </head>
 <body>
+<!-- NAVIGATION -->
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" ui-sref="home">AngularJS + RegireJS</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a ui-sref="home">Home</a></li>
+    </ul>
+</nav>
 
+<div class="container">
+
+    <div ui-view></div>
+
+</div>
 </body>
 </html>
